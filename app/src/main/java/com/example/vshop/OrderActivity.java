@@ -22,16 +22,14 @@ import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 public class OrderActivity extends AppCompatActivity {
 
     private List<Item> itemsList;
-    private OrderAdapter OrderItemAdapter;
     private RecyclerView rView;
-
+    private OrderAdapter orderItemAdapter;
     FirebaseFirestore firebaseDb;
     FirebaseAuth mAuth;
 
@@ -48,8 +46,8 @@ public class OrderActivity extends AppCompatActivity {
         rView.setLayoutManager(new LinearLayoutManager(this));
         rView.setHasFixedSize(true);
 
-        OrderItemAdapter = new OrderAdapter(itemsList);
-        rView.setAdapter(OrderItemAdapter);
+        orderItemAdapter = new OrderAdapter(itemsList);
+        rView.setAdapter(orderItemAdapter);
 
         firebaseDb.collection("Orders").document(mAuth.getCurrentUser().getUid())
         .collection("allOrder").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -63,7 +61,7 @@ public class OrderActivity extends AppCompatActivity {
                             item.setDocId(documentId);
                             itemsList.add(item);
                         }
-                        OrderItemAdapter.notifyDataSetChanged();
+                        orderItemAdapter.notifyDataSetChanged();
                     }
 
                 }else{
@@ -71,8 +69,5 @@ public class OrderActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
-
-
 }
