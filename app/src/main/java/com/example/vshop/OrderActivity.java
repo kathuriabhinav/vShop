@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.vshop.adapters.OrderAdapter;
-import com.example.vshop.helperClasses.Item;
+import com.example.vshop.helperClasses.Order;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,7 +27,7 @@ import java.util.List;
 
 public class OrderActivity extends AppCompatActivity {
 
-    private List<Item> itemsList;
+    private List<Order> ordersList;
     private RecyclerView rView;
     private OrderAdapter orderItemAdapter;
     FirebaseFirestore firebaseDb;
@@ -41,12 +41,12 @@ public class OrderActivity extends AppCompatActivity {
         firebaseDb = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
 
-        itemsList=new ArrayList<>();
+        ordersList=new ArrayList<>();
         rView =findViewById(R.id.order_item_container);
         rView.setLayoutManager(new LinearLayoutManager(this));
         rView.setHasFixedSize(true);
 
-        orderItemAdapter = new OrderAdapter(itemsList);
+        orderItemAdapter = new OrderAdapter(ordersList);
         rView.setAdapter(orderItemAdapter);
 
         firebaseDb.collection("Orders").document(mAuth.getCurrentUser().getUid())
@@ -57,9 +57,9 @@ public class OrderActivity extends AppCompatActivity {
                     if(task.getResult()!=null){
                         for(DocumentChange doc :task.getResult().getDocumentChanges()){
                             String documentId = doc.getDocument().getId();
-                            Item item = doc.getDocument().toObject(Item.class);
+                            Order item = doc.getDocument().toObject(Order.class);
                             item.setDocId(documentId);
-                            itemsList.add(item);
+                            ordersList.add(item);
                         }
                         orderItemAdapter.notifyDataSetChanged();
                     }

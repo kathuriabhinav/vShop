@@ -15,6 +15,7 @@
 
             <LinearLayout
                 android:orientation="horizontal"
+                android:padding="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -27,7 +28,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:padding="5dp"
+                android:padding="10dp"
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -43,6 +44,18 @@
                     android:id="@+id/order_price"
                     android:textSize="18sp"
                     android:text="Item Price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/order_time"
+                    android:textSize="18sp"
+                    android:text="Item time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/order_paymentid"
+                    android:textSize="18sp"
+                    android:text="Item PaymentID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
