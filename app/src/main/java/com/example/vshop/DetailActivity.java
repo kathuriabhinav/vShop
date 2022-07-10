@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
@@ -71,6 +72,7 @@ public class DetailActivity extends AppCompatActivity {
         }
         if(feature!=null){
             Glide.with(getApplicationContext()).load(feature.getimageUrl()).into(vImage);
+            vImage.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
             vItemName.setText(feature.getName());
             vPrice.setText("₹ "+feature.getPrice());
             bRating.setText(feature.getRating()+"");
@@ -79,6 +81,7 @@ public class DetailActivity extends AppCompatActivity {
         }
         if(bestSell!=null){
             Glide.with(getApplicationContext()).load(bestSell.getimageUrl()).into(vImage);
+            vImage.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
             vItemName.setText(bestSell.getName());
             vPrice.setText("₹ "+bestSell.getPrice());
             bRating.setText(bestSell.getRating()+"");
@@ -87,6 +90,7 @@ public class DetailActivity extends AppCompatActivity {
         }
         if(items!=null){
             Glide.with(getApplicationContext()).load(items.getimageUrl()).into(vImage);
+            vImage.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
             vItemName.setText(items.getName());
             vPrice.setText("₹ "+items.getPrice());
             bRating.setText(items.getRating()+"");
