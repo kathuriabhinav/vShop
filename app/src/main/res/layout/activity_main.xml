@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/main_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="44dp"
+            android:text="Welcome to vShop"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/main_textView2"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:text="Explore Us"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/main_textView"
+            app:layout_constraintStart_toStartOf="@+id/main_textView"
+            app:layout_constraintTop_toBottomOf="@+id/main_textView" />
+
+        <ImageView
+            android:id="@+id/main_image"
+            android:layout_width="374dp"
+            android:layout_height="299dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="96dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.486"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_textView2"
+            app:srcCompat="@drawable/login_page_image" />
+
+        <Button
+            android:id="@+id/main_login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="132dp"
+            android:background="@drawable/login_button"
+            android:onClick="goToLogin"
+            android:text="Log in"
+            android:textSize="20dp"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="@+id/main_image"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="@+id/main_image"
+            app:layout_constraintTop_toBottomOf="@+id/main_image" />
+
+        <TextView
+            android:id="@+id/main_txt_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="60dp"
+            android:onClick="goToSignUp"
+            android:text="Sign Up"
+            android:textColor="@color/colorPrimary"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/main_login_button"
+            app:layout_constraintStart_toStartOf="@+id/main_login_button"
+            app:layout_constraintTop_toBottomOf="@+id/main_login_button" />
+
+
+    </LinearLayout>
+
+</ScrollView>
