@@ -39,7 +39,7 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         holder.mAddress.setText(mAddressList.get(position).getAddress());
         holder.mRadio.setOnClickListener(new View.OnClickListener() {
             @Override

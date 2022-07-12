@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.vshop.ItemActivity;
+import com.example.vshop.ItemsActivity;
 import com.example.vshop.R;
 import com.example.vshop.adapters.BestSellAdapter;
 import com.example.vshop.adapters.CategoryAdapter;
@@ -149,7 +149,7 @@ public class HomeFragment extends Fragment {
         mSeeAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getContext(), ItemActivity.class);
+                Intent intent=new Intent(getContext(), ItemsActivity.class);
                 startActivity(intent);
             }
         });
@@ -158,7 +158,7 @@ public class HomeFragment extends Fragment {
         mBestSell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getContext(), ItemActivity.class);
+                Intent intent=new Intent(getContext(), ItemsActivity.class);
                 startActivity(intent);
             }
         });
@@ -167,7 +167,7 @@ public class HomeFragment extends Fragment {
         mFeature.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getContext(), ItemActivity.class);
+                Intent intent=new Intent(getContext(), ItemsActivity.class);
                 startActivity(intent);
             }
         });

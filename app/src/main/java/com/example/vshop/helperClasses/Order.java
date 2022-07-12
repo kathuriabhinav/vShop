@@ -1,22 +1,31 @@
 package com.example.vshop.helperClasses;
 
 public class Order {
+    String address;
     String imageUrl;
     String name;
+    String paymentId;
     String price;
     String time;
-    String paymentId;
-    String docId;
 
-    public Order() {
+    public Order(){
+
     }
 
-    public String getDocId() {
-        return docId;
+    public String getAddress() {
+        return address;
     }
 
-    public void setDocId(String docId) {
-        this.docId = docId;
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getName() {
@@ -25,6 +34,14 @@ public class Order {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPaymentId() {
+        return paymentId;
+    }
+
+    public void setPaymentId(String paymentId) {
+        this.paymentId = paymentId;
     }
 
     public String getPrice() {
@@ -41,21 +58,5 @@ public class Order {
 
     public void setTime(String time) {
         this.time = time;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-    public String getPaymentId() {
-        return paymentId;
-    }
-
-    public void setPaymentId(String paymentId) {
-        this.paymentId = paymentId;
     }
 }

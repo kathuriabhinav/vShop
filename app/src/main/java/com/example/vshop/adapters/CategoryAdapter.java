@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.vshop.ItemActivity;
+import com.example.vshop.ItemsActivity;
 import com.example.vshop.R;
 import com.example.vshop.helperClasses.Category;
 
@@ -34,7 +35,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         Glide.with(context).load(mCategoryList.get(position).getImageUrl()).into(holder.mTypeImg);       // 3rd party library for displaying the men,women or kid
         holder.mTypeImg.setOnClickListener(new View.OnClickListener() {
             @Override

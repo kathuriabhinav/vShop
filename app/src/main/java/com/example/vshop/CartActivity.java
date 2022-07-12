@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.vshop.adapters.CartAdapter;
 import com.example.vshop.helperClasses.Item;
@@ -28,6 +29,7 @@ import java.util.List;
 
 public class CartActivity extends AppCompatActivity implements CartAdapter.ItemRemoved {
 
+    Toolbar tToolbar;
     private List<Item> itemsList;
     private RecyclerView rView;
     private CartAdapter cartItemAdapter;
@@ -47,6 +49,11 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.ItemR
         firebaseDb = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
 
+        tToolbar = findViewById(R.id.cart_toolbar);
+        setSupportActionBar(tToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("My Cart");
+
         itemsList=new ArrayList<>();
         rView =findViewById(R.id.cart_item_container);
         tTotalAmount =findViewById(R.id.total_amount);
@@ -57,9 +64,13 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.ItemR
         bBuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(CartActivity.this,AddressActivity.class);
-                intent.putExtra("itemList", (Serializable) itemsList);
-                startActivity(intent);
+                if(tTotalAmountInDouble!=0.0) {
+                    Intent intent = new Intent(CartActivity.this, AddressActivity.class);
+                    intent.putExtra("itemList", (Serializable) itemsList);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(CartActivity.this,"Empty Cart",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -68,25 +79,25 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.ItemR
 
         firebaseDb.collection("Users").document(mAuth.getCurrentUser().getUid())
                 .collection("Cart").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if(task.isSuccessful()){
-                            if(task.getResult()!=null){
-                                for(DocumentChange doc :task.getResult().getDocumentChanges()){
-                                    String documentId = doc.getDocument().getId();
-                                    Item item = doc.getDocument().toObject(Item.class);
-                                    item.setDocId(documentId);
-                                    itemsList.add(item);
-                                }
-                                calculateAmount(itemsList);
-                                cartItemAdapter.notifyDataSetChanged();
-                            }
-
-                        }else{
-                            Toast.makeText(CartActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if(task.isSuccessful()){
+                    if(task.getResult()!=null){
+                        for(DocumentChange doc :task.getResult().getDocumentChanges()){
+                            String documentId = doc.getDocument().getId();
+                            Item item = doc.getDocument().toObject(Item.class);
+                            item.setDocId(documentId);
+                            itemsList.add(item);
                         }
+                        calculateAmount(itemsList);
+                        cartItemAdapter.notifyDataSetChanged();
                     }
-                });
+
+                }else{
+                    Toast.makeText(CartActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
     }
 

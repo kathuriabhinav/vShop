@@ -52,19 +52,19 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
             public void onClick(View view) {
                 firebaseFirestore.collection("Users").document(firebaseAuth.getCurrentUser().getUid())
                         .collection("Cart").document(itemsList.get(position).getDocId()).delete().addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if(task.isSuccessful()){
-                                    itemsList.remove(itemsList.get(position));
-                                    notifyDataSetChanged();
-                                    itemRemoved.onItemRemoved(itemsList);
-                                    Toast.makeText(holder.itemView.getContext(), "Item Removed", Toast.LENGTH_SHORT).show();
-                                }else{
-                                    Toast.makeText(holder.itemView.getContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful()){
+                            itemsList.remove(itemsList.get(position));
+                            notifyDataSetChanged();
+                            itemRemoved.onItemRemoved(itemsList);
+                            Toast.makeText(holder.itemView.getContext(), "Item Removed", Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(holder.itemView.getContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
 
-                                }
-                            }
-                        });
+                        }
+                    }
+                });
             }
         });
     }

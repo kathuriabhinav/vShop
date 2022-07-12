@@ -71,17 +71,17 @@ public class AddressActivity extends AppCompatActivity implements AddressAdapter
         firebaseDb=FirebaseFirestore.getInstance();
         firebaseDb.collection("User").document(mAuth.getCurrentUser().getUid())
                 .collection("Address").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if(task.isSuccessful()){
-                            for(DocumentSnapshot doc:task.getResult().getDocuments()){
-                                Address address=doc.toObject(Address.class);
-                                mAddressList.add(address);
-                                aAddress.notifyDataSetChanged();
-                            }
-                        }
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if(task.isSuccessful()){
+                    for(DocumentSnapshot doc:task.getResult().getDocuments()){
+                        Address address=doc.toObject(Address.class);
+                        mAddressList.add(address);
+                        aAddress.notifyDataSetChanged();
                     }
-                });
+                }
+            }
+        });
 
 
         bAddress.setOnClickListener(new View.OnClickListener() {

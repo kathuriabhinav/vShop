@@ -1,63 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
-        android:padding="5dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="5dp">
 
         <LinearLayout
-            android:padding="5dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="5dp">
 
             <LinearLayout
-                android:orientation="horizontal"
-                android:padding="10dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/order_image"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/ic_launcher_background"/>
+                    android:layout_width="130dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/ic_launcher_background" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:padding="10dp"
-                android:orientation="vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
 
                 <TextView
                     android:id="@+id/order_name"
-                    android:textSize="18sp"
-                    android:text="Item Name"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:text="Product Name"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/order_price"
-                    android:textSize="18sp"
-                    android:text="Item Price"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:text="Item Price"
+                    android:textSize="18sp" />
+
                 <TextView
                     android:id="@+id/order_time"
-                    android:textSize="18sp"
-                    android:text="Item time"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:text="Order Time"
+                    android:textSize="18sp" />
+
                 <TextView
-                    android:id="@+id/order_paymentid"
-                    android:textSize="18sp"
-                    android:text="Item PaymentID"
+                    android:id="@+id/order_payment_id"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:text="Payment Id"
+                    android:textSize="18sp" />
+
 
             </LinearLayout>
 

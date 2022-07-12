@@ -15,6 +15,8 @@ import com.example.vshop.helperClasses.Order;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> {
@@ -39,10 +41,12 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.orderName.setText(ordersList.get(position).getName());
-        holder.orderPrice.setText("₹ "+ordersList.get(position).getPrice());
-        holder.orderTime.setText(ordersList.get(position).getTime());
-        holder.orderPaymentID.setText("₹ "+ordersList.get(position).getPaymentId());
+        holder.orderName.setText("Product: "+ordersList.get(position).getName());
+        holder.orderPrice.setText("Price: "+"₹ "+ordersList.get(position).getPrice());
+        long epochTime = Long.valueOf(ordersList.get(position).getTime())*1000;
+        DateFormat df = new SimpleDateFormat("dd MMMM yyyy hh:mm ");
+        holder.orderTime.setText("Order Time: "+df.format(epochTime));
+        holder.orderPaymentID.setText("Payment ID: "+ ordersList.get(position).getPaymentId());
         Glide.with(holder.itemView.getContext()).load(ordersList.get(position).getImageUrl()).into(holder.orderImage);
     }
 
@@ -63,7 +67,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
             orderName = itemView.findViewById(R.id.order_name);
             orderPrice = itemView.findViewById(R.id.order_price);
             orderTime = itemView.findViewById(R.id.order_time);
-            orderPaymentID = itemView.findViewById(R.id.order_paymentid);
+            orderPaymentID = itemView.findViewById(R.id.order_payment_id);
         }
     }
 }

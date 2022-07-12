@@ -48,9 +48,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout1">
 
         <EditText
+            android:id="@+id/regis_email"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/regis_email"
             android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -64,12 +64,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
         <EditText
+            android:id="@+id/regis_password"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="textPassword"
-            android:id="@+id/regis_password"
-            />
+            android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

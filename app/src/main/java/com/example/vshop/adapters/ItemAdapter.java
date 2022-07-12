@@ -23,7 +23,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     Context applicationContext;
     List<Item> itemList;
-
+    
     public ItemAdapter(Context applicationContext, List<Item> itemList) {
         this.applicationContext=applicationContext;
         this.itemList=itemList;
@@ -37,7 +37,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         holder.mCost.setText("₹ "+itemList.get(position).getPrice());
         holder.mName.setText(itemList.get(position).getName());
         if(!(applicationContext instanceof HomeActivity)){
@@ -55,6 +55,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
                 applicationContext.startActivity(intent);
             }
         });
+
         holder.mName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

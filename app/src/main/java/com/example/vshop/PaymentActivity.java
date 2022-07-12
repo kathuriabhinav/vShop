@@ -74,7 +74,7 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
             price = getIntent().getDoubleExtra("amount",0.0);
         }
         offer=0.0;
-        shipping=0.0;
+        shipping=40.0;
         totalAmount = price + shipping - offer;
 
 
@@ -109,7 +109,7 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
             // key mandatory which it will retrieve from manifest or we can put the api key here also
             options.put("name", "vShop");                                   // madatory
 //            options.put("description", "Reference No. #123456");
-//            options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
+            options.put("image", "https://firebasestorage.googleapis.com/v0/b/vshop-903cc.appspot.com/o/icons8-gift-100.png?alt=media&token=c4cee092-2fe7-4ceb-a343-2a5ef1837d2d");
 //            options.put("order_id", "order_DBJOWzybf0sJbb");//from response of step 3.
 //            options.put("theme.color", "#3399cc");
             options.put("currency", "INR");                                  // madatory

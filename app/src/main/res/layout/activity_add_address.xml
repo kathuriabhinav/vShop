@@ -41,16 +41,17 @@
         android:layout_width="310dp"
         android:layout_height="62dp"
         android:layout_marginTop="36dp"
+        android:hint="Address Lane"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.424"
         app:layout_constraintStart_toStartOf="parent"
-        android:hint="Address Lane"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+
         <EditText
-            android:layout_width="match_parent"
-            android:inputType="text"
             android:id="@+id/ad_address"
-            android:layout_height="match_parent"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -58,16 +59,17 @@
         android:layout_width="310dp"
         android:layout_height="62dp"
         android:layout_marginTop="36dp"
+        android:hint="City"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.424"
-        android:hint="City"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
+
         <EditText
-            android:layout_width="match_parent"
-            android:inputType="text"
             android:id="@+id/ad_city"
-            android:layout_height="match_parent"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -76,35 +78,35 @@
         android:layout_width="310dp"
         android:layout_height="62dp"
         android:layout_marginTop="36dp"
+        android:hint="Postal Code"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.424"
         app:layout_constraintStart_toStartOf="parent"
-        android:hint="Postal Code"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout5">
+
         <EditText
-            android:layout_width="match_parent"
-            android:inputType="number"
             android:id="@+id/ad_code"
-            android:layout_height="match_parent"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="310dp"
         android:layout_height="62dp"
         android:layout_marginTop="36dp"
+        android:hint="Phone Number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.424"
-        android:hint="Phone Number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout6">
-        <EditText
-            android:layout_width="match_parent"
-            android:inputType="number"
-            android:id="@+id/ad_phone"
-            android:layout_height="match_parent"/>
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <!--    android:background="@drawable/login_btn_bg"-->
+        <EditText
+            android:id="@+id/ad_phone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/ad_add_address"

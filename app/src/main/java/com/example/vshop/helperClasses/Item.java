@@ -22,7 +22,7 @@ public class Item implements Serializable {
     public void setDocId(String docId) {
         this.docId = docId;
     }
-
+    
     public String getDescription() {
         return description;
     }

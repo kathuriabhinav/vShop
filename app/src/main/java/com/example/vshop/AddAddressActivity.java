@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AddAddressActivity extends AppCompatActivity {
-
+    
     private Toolbar tToolbar;
     private EditText vName,vCity,vAddress,vCode, vNumber;
     private Button bAddress;
@@ -63,14 +63,14 @@ public class AddAddressActivity extends AppCompatActivity {
 
                     firebaseDb.collection("User").document(mAuth.getCurrentUser().getUid())
                             .collection("Address").add(mMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
-                                @Override
-                                public void onComplete(@NonNull Task<DocumentReference> task) {
-                                    if (task.isSuccessful()) {
-                                        Toast.makeText(AddAddressActivity.this, "Address Added", Toast.LENGTH_SHORT).show();
-                                        finish();
-                                    }
-                                }
-                            });
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentReference> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(AddAddressActivity.this, "Address Added", Toast.LENGTH_SHORT).show();
+                                finish();
+                            }
+                        }
+                    });
                 }
             }
         });

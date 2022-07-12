@@ -2,6 +2,7 @@ package com.example.vshop;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,9 +28,11 @@ import java.util.List;
 
 public class OrderActivity extends AppCompatActivity {
 
+    private Toolbar tToolbar;
     private List<Order> ordersList;
     private RecyclerView rView;
     private OrderAdapter orderItemAdapter;
+
     FirebaseFirestore firebaseDb;
     FirebaseAuth mAuth;
 
@@ -41,6 +44,11 @@ public class OrderActivity extends AppCompatActivity {
         firebaseDb = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
 
+        tToolbar = findViewById(R.id.order_toolbar);
+        setSupportActionBar(tToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("My Orders");
+
         ordersList=new ArrayList<>();
         rView =findViewById(R.id.order_item_container);
         rView.setLayoutManager(new LinearLayoutManager(this));
@@ -50,15 +58,13 @@ public class OrderActivity extends AppCompatActivity {
         rView.setAdapter(orderItemAdapter);
 
         firebaseDb.collection("Orders").document(mAuth.getCurrentUser().getUid())
-        .collection("allOrder").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                .collection("allOrder").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if(task.isSuccessful()){
                     if(task.getResult()!=null){
                         for(DocumentChange doc :task.getResult().getDocumentChanges()){
-                            String documentId = doc.getDocument().getId();
                             Order item = doc.getDocument().toObject(Order.class);
-                            item.setDocId(documentId);
                             ordersList.add(item);
                         }
                         orderItemAdapter.notifyDataSetChanged();
