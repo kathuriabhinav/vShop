@@ -3,7 +3,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="5dp">
+    android:padding="15dp">
 
     <ImageView
         android:id="@+id/bestseller_image"
@@ -17,6 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="55$"
+        android:layout_marginTop="5dp"
         android:textSize="18sp" />
 
     <TextView
@@ -24,6 +25,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Woman T-Shirt"
-        android:textSize="18sp" />
+        android:textSize="16sp" />
 
 </LinearLayout>

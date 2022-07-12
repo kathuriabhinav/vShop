@@ -18,6 +18,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
+                android:padding="20dp"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -54,6 +55,10 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="10dp"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -90,6 +95,10 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="10dp"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -114,7 +123,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/bestsell_recycler"
                 android:layout_width="match_parent"
-                android:layout_height="250dp" />
+                android:layout_height="270dp" />
         </LinearLayout>
 
     </LinearLayout>

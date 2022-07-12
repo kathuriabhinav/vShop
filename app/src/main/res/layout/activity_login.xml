@@ -10,7 +10,7 @@
         android:id="@+id/login_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="30dp"
         android:text="Login"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,7 +49,7 @@
         android:id="@+id/textInputLayout"
         android:layout_width="310dp"
         android:layout_height="62dp"
-        android:layout_marginTop="51dp"
+        android:layout_marginTop="60dp"
         android:hint="Email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,8 +97,9 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/login_toolbar"
-        android:layout_width="430dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
