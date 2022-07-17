@@ -7,5 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="colorPrimary">#667EEA</color>
+    <color name="colorPrimary">#FFFFFFFF</color>
+<!--    <color name="colorPrimary">#667EEA</color>-->
+    <color name="teal">#80C1BE</color>
+    <color name="spanish_gray">#989898</color>
 </resources>

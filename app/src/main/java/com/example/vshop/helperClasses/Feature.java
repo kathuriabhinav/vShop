@@ -9,6 +9,17 @@ public class Feature implements Serializable {
     double price;
     int rating;
 
+
+    public String getDocId() {
+        return docId;
+    }
+
+    public void setDocId(String docId) {
+        this.docId = docId;
+    }
+
+    String docId;
+
     public Feature() {
         // Constructor
     }

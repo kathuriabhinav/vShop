@@ -19,7 +19,7 @@
     <LinearLayout
         android:id="@+id/home_search_layout"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="60dp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="10dp"
         android:layout_marginTop="10dp"
@@ -32,15 +32,14 @@
 
         <ImageView
             android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
-            android:src="@android:drawable/ic_search_category_default" />
+            android:layout_height="50dp"
+            android:layout_gravity="fill|center"
+            android:src="@drawable/magnifier" />
 
         <EditText
             android:id="@+id/home_search_text"
             android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="Search Your Product" />

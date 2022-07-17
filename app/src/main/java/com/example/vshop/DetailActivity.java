@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -61,6 +62,10 @@ public class DetailActivity extends AppCompatActivity {
         bSmall=findViewById(R.id.detail_butSize_s);
         bMedium=findViewById(R.id.detail_butSize_m);
         bLarge=findViewById(R.id.detail_butSize_l);
+
+        bMedium.setBackgroundColor(Color.YELLOW);
+        bLarge.setBackgroundColor(Color.YELLOW);
+        bSmall.setBackgroundColor(Color.YELLOW);
 
         firestoreDb =FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
@@ -166,6 +171,12 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 size=1;
+                bSmall.setBackgroundColor(Color.BLACK);
+                bLarge.setBackgroundColor(Color.YELLOW);
+                bMedium.setBackgroundColor(Color.YELLOW);
+                bSmall.setTextColor(Color.WHITE);
+                bLarge.setTextColor(Color.BLACK);
+                bMedium.setTextColor(Color.BLACK);
                 vSelectSize.setText("Selected Size: S");
             }
         });
@@ -174,6 +185,12 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 size=2;
+                bMedium.setBackgroundColor(Color.BLACK);
+                bLarge.setBackgroundColor(Color.YELLOW);
+                bSmall.setBackgroundColor(Color.YELLOW);
+                bMedium.setTextColor(Color.WHITE);
+                bLarge.setTextColor(Color.BLACK);
+                bSmall.setTextColor(Color.BLACK);
                 vSelectSize.setText("Selected Size: M");
             }
         });
@@ -182,9 +199,21 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 size=3;
+                bLarge.setBackgroundColor(Color.BLACK);
+                bMedium.setBackgroundColor(Color.YELLOW);
+                bSmall.setBackgroundColor(Color.YELLOW);
+                bLarge.setTextColor(Color.WHITE);
+                bMedium.setTextColor(Color.BLACK);
+                bSmall.setTextColor(Color.BLACK);
                 vSelectSize.setText("Selected Size: L");
             }
         });
+
+
+
+        bMedium.setBackgroundColor(Color.YELLOW);
+        bLarge.setBackgroundColor(Color.YELLOW);
+        bSmall.setBackgroundColor(Color.YELLOW);
 
     }
 

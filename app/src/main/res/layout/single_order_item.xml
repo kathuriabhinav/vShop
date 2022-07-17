@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/listDivider"
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
         android:padding="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp">
+            android:padding="10dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -21,7 +27,7 @@
                 <ImageView
                     android:id="@+id/order_image"
                     android:layout_width="130dp"
-                    android:layout_height="150dp"
+                    android:layout_height="130dp"
                     android:src="@drawable/ic_launcher_background" />
 
             </LinearLayout>
@@ -30,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="5dp">
+                android:padding="10dp">
 
                 <TextView
                     android:id="@+id/order_name"
@@ -38,7 +44,7 @@
                     android:layout_height="wrap_content"
                     android:padding="2dp"
                     android:text="Product Name"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/order_price"
@@ -46,7 +52,7 @@
                     android:layout_height="wrap_content"
                     android:padding="2dp"
                     android:text="Item Price"
-                    android:textSize="18sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/order_time"
@@ -54,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:padding="2dp"
                     android:text="Order Time"
-                    android:textSize="18sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/order_payment_id"
@@ -62,12 +68,13 @@
                     android:layout_height="wrap_content"
                     android:padding="2dp"
                     android:text="Payment Id"
-                    android:textSize="18sp" />
+                    android:textSize="14sp" />
 
 
             </LinearLayout>
 
         </LinearLayout>
+
 
     </androidx.cardview.widget.CardView>
 

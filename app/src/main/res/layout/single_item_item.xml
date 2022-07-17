@@ -29,14 +29,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="$ 34.0"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/item_nam"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Woman T shirt"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

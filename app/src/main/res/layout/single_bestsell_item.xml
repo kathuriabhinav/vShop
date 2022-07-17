@@ -18,13 +18,13 @@
         android:layout_height="wrap_content"
         android:text="55$"
         android:layout_marginTop="5dp"
-        android:textSize="18sp" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/bestseller_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Woman T-Shirt"
-        android:textSize="16sp" />
+        android:textSize="14sp" />
 
 </LinearLayout>
