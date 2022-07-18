@@ -13,3 +13,6 @@
 - Add address or select and already saved address
 - Make realtime payments
 - Get succesfully ordered items in personal my-orders section
+
+
+To Download the application [click here](https://github.com/kathuriabhinav/vShop/raw/main/app/release/app-release.apk) 
