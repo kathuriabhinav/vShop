@@ -29,7 +29,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout1"
             android:layout_width="300dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="32dp"
             android:gravity="center"
@@ -38,7 +38,7 @@
             <EditText
                 android:id="@+id/regis_name"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:inputType="textEmailAddress" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -46,7 +46,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
             android:layout_width="300dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="32dp"
             android:gravity="center"
@@ -55,7 +55,7 @@
             <EditText
                 android:id="@+id/regis_email"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:inputType="textEmailAddress" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -63,7 +63,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout2"
             android:layout_width="300dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="32dp"
             android:gravity="center"
@@ -72,7 +72,7 @@
             <EditText
                 android:id="@+id/regis_password"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -85,12 +85,12 @@
             android:layout_marginTop="50dp"
             android:layout_marginRight="80dp"
             android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/teal"
+            android:backgroundTint="@color/black"
             android:gravity="center"
             android:padding="10dp"
             android:text="Sign Up"
             android:textAllCaps="false"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/white" />
 
         <LinearLayout
             android:layout_width="match_parent"

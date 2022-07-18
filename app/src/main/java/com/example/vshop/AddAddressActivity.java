@@ -57,7 +57,7 @@ public class AddAddressActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if(validDetails()) {
-                    String final_address = name+","+city+","+address+","+code+","+number;
+                    String final_address = name+"\n"+address+"\n"+city+", "+code+"\n"+number+".";
                     Map<String, String> mMap = new HashMap<>();
                     mMap.put("address", final_address);
 

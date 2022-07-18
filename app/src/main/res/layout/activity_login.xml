@@ -65,13 +65,13 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="80dp"
             android:layout_marginRight="80dp"
-            android:backgroundTint="@color/teal"
+            android:backgroundTint="@color/black"
             android:padding="10dp"
             android:text="Login"
             android:layout_gravity="center"
             android:gravity="center"
             android:textAllCaps="false"
-            android:textColor="@android:color/black"/>
+            android:textColor="@android:color/white"/>
 
         <LinearLayout
             android:layout_width="match_parent"
